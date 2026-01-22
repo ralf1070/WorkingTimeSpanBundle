@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="de" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="working_time_calc">
+                <source>working_time_calc</source>
+                <target>Arbeitszeitberechnung</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.enabled">
+                <source>working_time_calc.enabled</source>
+                <target>Alternative Arbeitszeitberechnung</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.enabled.help">
+                <source>working_time_calc.enabled.help</source>
+                <target>Standard: Kimai summiert die Dauer aller Buchungen pro Tag (kann bei parallelen Tätigkeiten zu Doppelzählung führen). Alternativ: Berechnet Arbeitszeit als Zeitspanne von erster Startzeit bis letzter Endzeit des Tages.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

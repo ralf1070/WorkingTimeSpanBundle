@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" target-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="working_time_calc">
+                <source>working_time_calc</source>
+                <target>Working time calculation</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.enabled">
+                <source>working_time_calc.enabled</source>
+                <target>Alternative working time calculation</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.enabled.help">
+                <source>working_time_calc.enabled.help</source>
+                <target>Default: Kimai sums up the duration of all bookings per day (may cause double counting for parallel activities). Alternative: Calculates working time as time span from first start to last end of the day.</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

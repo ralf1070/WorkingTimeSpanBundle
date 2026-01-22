@@ -1,0 +1,28 @@
+{
+    "name": "bj/working-time-span-bundle",
+    "description": "Alternative working time calculation based on first start to last end time",
+    "type": "kimai-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "kimai",
+        "kimai-plugin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ralf Müller",
+            "homepage": "https://www.bj-ig.de"
+        }
+    ],
+    "extra": {
+        "kimai": {
+            "require": 23200,
+            "name": "Working Time Span"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "KimaiPlugin\\WorkingTimeSpanBundle\\": ""
+        }
+    }
+}
