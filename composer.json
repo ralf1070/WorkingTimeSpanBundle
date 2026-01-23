@@ -2,7 +2,7 @@
     "name": "bj/working-time-span-bundle",
     "description": "Alternative working time calculation based on first start to last end time",
     "type": "kimai-plugin",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "keywords": [
         "kimai",
         "kimai-plugin"

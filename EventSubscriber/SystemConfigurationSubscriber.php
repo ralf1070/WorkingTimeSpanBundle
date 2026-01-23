@@ -6,7 +6,10 @@ use App\Event\SystemConfigurationEvent;
 use App\Form\Model\Configuration;
 use App\Form\Model\SystemConfiguration;
 use App\Form\Type\YesNoType;
+use KimaiPlugin\WorkingTimeSpanBundle\Service\TimeSpanCalculator;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Validator\Constraints\Range;
 
 final class SystemConfigurationSubscriber implements EventSubscriberInterface
 {
@@ -28,6 +31,22 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
                         ->setType(YesNoType::class)
                         ->setOptions([
                             'help' => 'working_time_calc.enabled.help',
+                        ]),
+                    (new Configuration('working_time_calc.gap_tolerance'))
+                        ->setLabel('working_time_calc.gap_tolerance')
+                        ->setType(IntegerType::class)
+                        ->setValue(TimeSpanCalculator::DEFAULT_GAP_TOLERANCE_MINUTES)
+                        ->setConstraints([new Range(['min' => 0, 'max' => 60])])
+                        ->setOptions([
+                            'help' => 'working_time_calc.gap_tolerance.help',
+                        ]),
+                    (new Configuration('working_time_calc.max_duration'))
+                        ->setLabel('working_time_calc.max_duration')
+                        ->setType(IntegerType::class)
+                        ->setValue(TimeSpanCalculator::DEFAULT_MAX_DURATION_HOURS)
+                        ->setConstraints([new Range(['min' => 1, 'max' => 24])])
+                        ->setOptions([
+                            'help' => 'working_time_calc.max_duration.help',
                         ]),
                 ])
         );
