@@ -51,7 +51,7 @@ WorkingTimeSpanBundle/
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| `working_time_calc.enabled` | bool | false | Enable alternative calculation |
+| `working_time_calc.enabled` | bool | true | Enable alternative calculation |
 | `working_time_calc.gap_tolerance` | int | 3 | Gap tolerance in minutes |
 | `working_time_calc.max_duration` | int | 16 | Max task duration in hours |
 

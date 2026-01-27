@@ -18,8 +18,8 @@ final class WorkingTimeYearSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents(): array
     {
         return [
-            // High priority: runs early, overrides default values
-            WorkingTimeYearEvent::class => ['onWorkingTimeYear', 300],
+            // Priority > 150: must run before WorkContractBundle subscribers that read actualTime
+            WorkingTimeYearEvent::class => ['onWorkingTimeYear', 200],
         ];
     }
 

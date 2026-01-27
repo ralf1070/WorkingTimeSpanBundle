@@ -29,6 +29,7 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
                     (new Configuration('working_time_calc.enabled'))
                         ->setLabel('working_time_calc.enabled')
                         ->setType(YesNoType::class)
+                        ->setValue(true)
                         ->setOptions([
                             'help' => 'working_time_calc.enabled.help',
                         ]),
