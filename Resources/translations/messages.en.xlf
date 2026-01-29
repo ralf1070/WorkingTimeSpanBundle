@@ -30,6 +30,30 @@
                 <source>working_time_calc.max_duration.help</source>
                 <target>Individual time entries exceeding this duration are excluded from working time calculation. Default: 16 hours.</target>
             </trans-unit>
+            <trans-unit id="working_time_calc.is_public_holiday_expected_time">
+                <source>working_time_calc.is_public_holiday_expected_time</source>
+                <target>Add public holidays to actual time</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_public_holiday_expected_time.help">
+                <source>working_time_calc.is_public_holiday_expected_time.help</source>
+                <target>Yes: Public holidays are added to actual working time (Kimai default). No: Public holidays reduce expected working time.</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_vacation_expected_time">
+                <source>working_time_calc.is_vacation_expected_time</source>
+                <target>Add vacation to actual time</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_vacation_expected_time.help">
+                <source>working_time_calc.is_vacation_expected_time.help</source>
+                <target>Yes: Vacation is added to actual working time (Kimai default). No: Vacation reduces expected working time.</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_sickness_expected_time">
+                <source>working_time_calc.is_sickness_expected_time</source>
+                <target>Add sickness to actual time</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_sickness_expected_time.help">
+                <source>working_time_calc.is_sickness_expected_time.help</source>
+                <target>Yes: Sickness is added to actual working time (Kimai default). No: Sickness reduces expected working time.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

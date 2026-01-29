@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.2.0 (2026-01-29)
+
+### New Features
+- **Expected time handling**: Configure how absences affect working time calculation
+  - Add public holidays to actual time (Kimai default) or reduce expected time
+  - Add vacation to actual time (Kimai default) or reduce expected time
+  - Add sickness to actual time (Kimai default) or reduce expected time
+- **ExpectedTimeSubscriber**: Listens to WorkContractBundle's ExpectedTimeCalculationEvent
+
+### Dependencies
+- Requires WorkContractBundle with ExpectedTimeCalculationEvent support
+
 ## 1.1.1 (2026-01-27)
 
 ### Changes

@@ -30,6 +30,30 @@
                 <source>working_time_calc.max_duration.help</source>
                 <target>Einzelne Zeiteinträge, die länger dauern, werden nicht in die Arbeitszeitberechnung einbezogen. Standard: 16 Stunden.</target>
             </trans-unit>
+            <trans-unit id="working_time_calc.is_public_holiday_expected_time">
+                <source>working_time_calc.is_public_holiday_expected_time</source>
+                <target>Feiertage zur Ist-Zeit addieren</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_public_holiday_expected_time.help">
+                <source>working_time_calc.is_public_holiday_expected_time.help</source>
+                <target>Ja: Feiertage werden zur geleisteten Arbeitszeit addiert (Kimai-Standard). Nein: Feiertage reduzieren die erwartete Arbeitszeit.</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_vacation_expected_time">
+                <source>working_time_calc.is_vacation_expected_time</source>
+                <target>Urlaub zur Ist-Zeit addieren</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_vacation_expected_time.help">
+                <source>working_time_calc.is_vacation_expected_time.help</source>
+                <target>Ja: Urlaub wird zur geleisteten Arbeitszeit addiert (Kimai-Standard). Nein: Urlaub reduziert die erwartete Arbeitszeit.</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_sickness_expected_time">
+                <source>working_time_calc.is_sickness_expected_time</source>
+                <target>Krankheit zur Ist-Zeit addieren</target>
+            </trans-unit>
+            <trans-unit id="working_time_calc.is_sickness_expected_time.help">
+                <source>working_time_calc.is_sickness_expected_time.help</source>
+                <target>Ja: Krankheit wird zur geleisteten Arbeitszeit addiert (Kimai-Standard). Nein: Krankheit reduziert die erwartete Arbeitszeit.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

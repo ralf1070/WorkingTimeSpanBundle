@@ -75,6 +75,17 @@ Navigiere zu **System → Einstellungen → Arbeitszeitberechnung**
 | Alternative Berechnung aktivieren | An | Plugin aktivieren/deaktivieren |
 | Lückentoleranz | 3 min | Maximale Lücke zwischen Einträgen, um noch als verbunden zu gelten |
 | Max. Aufgabendauer | 16 h | Einzeleinträge länger als dieser Wert werden ausgeschlossen |
+| Feiertage zur Ist-Zeit addieren | Aus | An: zur Ist-Zeit addieren (Kimai-Standard). Aus: Soll-Zeit reduzieren |
+| Urlaub zur Ist-Zeit addieren | Aus | An: zur Ist-Zeit addieren (Kimai-Standard). Aus: Soll-Zeit reduzieren |
+| Krankheit zur Ist-Zeit addieren | Aus | An: zur Ist-Zeit addieren (Kimai-Standard). Aus: Soll-Zeit reduzieren |
+
+### Behandlung der Soll-Zeit
+
+Standardmäßig addiert Kimai Abwesenheiten (Feiertage, Urlaub, Krankheit) zur geleisteten Arbeitszeit. Beispiel: 8h Soll, 6h gearbeitet + 2h Urlaub = 8h Ist.
+
+Dieses Plugin bietet einen alternativen Ansatz: Abwesenheiten reduzieren stattdessen die erwartete Arbeitszeit. Beispiel: 8h Soll - 2h Urlaub = 6h Soll, 6h gearbeitet = Ziel erreicht.
+
+Dieser Ansatz entspricht der üblichen Handhabung von Arbeitszeitkonten in Betrieben.
 
 ## So funktioniert es
 
