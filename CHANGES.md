@@ -1,5 +1,17 @@
 # Changelog
 
+## 1.3.0 (2026-02-04)
+
+### Removed
+- **Expected time handling**: Removed in favor of WorkContractBundle v1.30.0 native implementation
+  - Deleted `ExpectedTimeSubscriber`
+  - Removed configuration options `is_public_holiday_expected_time`, `is_vacation_expected_time`, `is_sickness_expected_time`
+  - Use WorkContractBundle settings (System → Settings → Work Contract) instead
+
+### Changes
+- **No dependencies**: Plugin now works standalone without WorkContractBundle
+- Core functionality (time span calculation, gap tolerance, overnight handling) unchanged
+
 ## 1.2.0 (2026-01-29)
 
 ### New Features

@@ -75,17 +75,10 @@ Navigate to **System → Settings → Working time calculation**
 | Enable alternative calculation | On | Enable/disable the plugin |
 | Gap tolerance | 3 min | Maximum gap between entries to still count as connected |
 | Max task duration | 16 h | Individual entries longer than this are excluded |
-| Add public holidays to actual time | Off | On: add to actual time (Kimai default). Off: reduce expected time |
-| Add vacation to actual time | Off | On: add to actual time (Kimai default). Off: reduce expected time |
-| Add sickness to actual time | Off | On: add to actual time (Kimai default). Off: reduce expected time |
 
 ### Expected Time Handling
 
-By default, Kimai adds absences (public holidays, vacation, sickness) to the actual worked time. For example: 8h expected, 6h worked + 2h vacation = 8h total.
-
-This plugin provides an alternative approach: absences reduce the expected working time instead. For example: 8h expected - 2h vacation = 6h expected, 6h worked = goal met.
-
-This approach aligns with how working time accounts are typically managed in organizations.
+Configuration for how absences (public holidays, vacation, sickness) affect expected vs. actual working time is provided by **WorkContractBundle v1.30.0+** (System → Settings → Work Contract).
 
 ## How It Works
 

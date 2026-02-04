@@ -37,7 +37,6 @@ WorkingTimeSpanBundle/
 ├── Service/
 │   └── TimeSpanCalculator.php        # Core calculation logic
 ├── EventSubscriber/
-│   ├── ExpectedTimeSubscriber.php         # Absence/holiday expected time handler
 │   ├── SystemConfigurationSubscriber.php  # Configuration options
 │   └── WorkingTimeYearSubscriber.php      # Event handler
 └── Resources/
@@ -55,23 +54,12 @@ WorkingTimeSpanBundle/
 | `working_time_calc.enabled` | bool | true | Enable alternative calculation |
 | `working_time_calc.gap_tolerance` | int | 3 | Gap tolerance in minutes |
 | `working_time_calc.max_duration` | int | 16 | Max task duration in hours |
-| `working_time_calc.is_public_holiday_expected_time` | bool | true | Yes: add to actual time (default). No: reduce expected time |
-| `working_time_calc.is_vacation_expected_time` | bool | true | Yes: add to actual time (default). No: reduce expected time |
-| `working_time_calc.is_sickness_expected_time` | bool | true | Yes: add to actual time (default). No: reduce expected time |
 
 **UI:** System → Settings → Working time calculation
 
 ### Expected Time Handling
 
-When `is_*_expected_time` is set to `true` (default Kimai behavior):
-- Absences/holidays add duration to actual worked time
-- Example: 8h expected, 6h worked + 2h vacation = 8h total (goal met)
-
-When set to `false` (alternative behavior):
-- Absences/holidays reduce the expected working time instead
-- Example: 8h expected - 2h vacation = 6h expected, 6h worked = goal met
-
-This is implemented via `ExpectedTimeSubscriber` listening to `ExpectedTimeCalculationEvent` from WorkContractBundle.
+Configuration for how absences/holidays affect expected vs. actual working time is provided by **WorkContractBundle v1.30.0+** (System → Settings → Work Contract).
 
 ## Calculation Flow
 
@@ -187,3 +175,7 @@ docker exec -w /opt/kimai kimai composer dump-autoload
 ```bash
 docker exec -w /opt/kimai kimai bin/console debug:container TimeSpanCalculator
 ```
+
+### Before committing
+1. Update `CHANGES.md` with new version and changes
+2. Bump version in `composer.json`

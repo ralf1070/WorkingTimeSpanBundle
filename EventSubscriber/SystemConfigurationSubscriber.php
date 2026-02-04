@@ -49,27 +49,6 @@ final class SystemConfigurationSubscriber implements EventSubscriberInterface
                         ->setOptions([
                             'help' => 'working_time_calc.max_duration.help',
                         ]),
-                    (new Configuration('working_time_calc.is_public_holiday_expected_time'))
-                        ->setLabel('working_time_calc.is_public_holiday_expected_time')
-                        ->setType(YesNoType::class)
-                        ->setValue(false)
-                        ->setOptions([
-                            'help' => 'working_time_calc.is_public_holiday_expected_time.help',
-                        ]),
-                    (new Configuration('working_time_calc.is_vacation_expected_time'))
-                        ->setLabel('working_time_calc.is_vacation_expected_time')
-                        ->setType(YesNoType::class)
-                        ->setValue(false)
-                        ->setOptions([
-                            'help' => 'working_time_calc.is_vacation_expected_time.help',
-                        ]),
-                    (new Configuration('working_time_calc.is_sickness_expected_time'))
-                        ->setLabel('working_time_calc.is_sickness_expected_time')
-                        ->setType(YesNoType::class)
-                        ->setValue(false)
-                        ->setOptions([
-                            'help' => 'working_time_calc.is_sickness_expected_time.help',
-                        ]),
                 ])
         );
     }
