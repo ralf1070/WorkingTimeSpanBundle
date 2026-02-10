@@ -37,7 +37,7 @@ class TimeSpanCalculatorTest extends TestCase
         $qb->method('orderBy')->willReturnSelf();
         $qb->method('expr')->willReturn(new \Doctrine\ORM\Query\Expr());
 
-        $query = $this->createMock(\Doctrine\ORM\AbstractQuery::class);
+        $query = $this->createMock(\Doctrine\ORM\Query::class);
         $query->method('getResult')->willReturn($timesheets);
         $qb->method('getQuery')->willReturn($query);
 

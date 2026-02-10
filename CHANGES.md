@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.2 (2026-02-10)
+
+### Fixed
+- **Kimai v3 compatibility**: Use `Query::class` instead of `AbstractQuery::class` in test mocks
+  (Doctrine ORM 3 changed `getQuery()` return type, compatible with v2 and v3)
+
 ## 1.3.1 (2026-02-10)
 
 ### Added
