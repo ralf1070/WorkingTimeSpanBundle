@@ -32,6 +32,7 @@ WorkingTimeSpanBundle/
 ├── composer.json                     # Plugin metadata
 ├── WorkingTimeSpanBundle.php         # Bundle main class
 ├── Rules.md                          # Detailed calculation rules
+├── phpunit.xml                       # PHPUnit configuration
 ├── DependencyInjection/
 │   └── WorkingTimeSpanExtension.php  # Service loader
 ├── Service/
@@ -39,6 +40,10 @@ WorkingTimeSpanBundle/
 ├── EventSubscriber/
 │   ├── SystemConfigurationSubscriber.php  # Configuration options
 │   └── WorkingTimeYearSubscriber.php      # Event handler
+├── Tests/
+│   ├── bootstrap.php                 # Test bootstrap (autoloader only)
+│   └── Service/
+│       └── TimeSpanCalculatorTest.php # Unit tests (14 tests)
 └── Resources/
     ├── config/
     │   └── services.yaml             # Service registration
@@ -153,6 +158,46 @@ if ($day->isLocked()) {
 Load timesheets with buffer (max_duration) before/after year boundaries to handle:
 - Entries from Dec 31 that extend into Jan 1
 - Entries on Jan 1 that overlap with Dec 31 entries
+
+## Tests
+
+### Infrastructure
+
+Pure unit tests — no database, no kernel boot. The repository is mocked, SystemConfiguration is stubbed.
+
+**Files:**
+- `Tests/Service/TimeSpanCalculatorTest.php` — 14 tests covering all calculation scenarios
+- `Tests/bootstrap.php` — Minimal bootstrap (autoloader only, no DB setup)
+- `phpunit.xml` — PHPUnit config with `LOAD_PLUGINS_IN_TEST=WorkingTimeSpanBundle`
+
+**Key difference to RemoteWorkBundle:** No DAMA DoctrineTestBundle, no `doctrine:schema:update` in bootstrap (plugin has no own tables).
+
+### Running Tests
+
+```bash
+# All plugin test suites
+composer tests-plugins
+
+# Only this plugin
+composer tests-plugins -- --plugin WorkingTimeSpanBundle
+
+# Single test
+composer tests-plugins -- --plugin WorkingTimeSpanBundle --filter testOverlappingEntriesSameDay
+```
+
+Requires Kimai with `LOAD_PLUGINS_IN_TEST` support (branch `feature/plugin-test-support` on https://github.com/ralf1070/kimai).
+
+### Test Coverage (14 tests, 32 assertions)
+
+| Bereich | Tests | Beschreibung |
+|---------|-------|-------------|
+| Basis | 3 | Empty result, default gap tolerance, default max duration |
+| Configuration | 2 | Custom gap tolerance, custom max duration |
+| Breaks | 2 | Break subtraction (single entry, merged span) |
+| Gap Tolerance | 2 | Gap within/exceeding tolerance |
+| Overlapping | 1 | Multiple overlapping entries same day |
+| Overnight | 2 | Reassignment + 16h split, two overnight overlapping |
+| Year Boundary | 2 | Entries at year boundary (current + previous year) |
 
 ## Development
 

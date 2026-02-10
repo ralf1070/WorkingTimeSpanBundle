@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.3.1 (2026-02-10)
+
+### Added
+- **Unit tests**: 13 tests for TimeSpanCalculator (based on `feature/working-time-span-integration` branch)
+- PHPUnit configuration and bootstrap for plugin test infrastructure
+
 ## 1.3.0 (2026-02-04)
 
 ### Removed

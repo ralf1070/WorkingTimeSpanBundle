@@ -103,6 +103,20 @@ Three entries on the same day:
 
 Entry B is merged into Jan 13 because it overlaps with the overnight entry. Jan 14 shows 0 hours.
 
+## Testing
+
+The plugin includes unit tests for the TimeSpanCalculator covering all calculation scenarios (gap tolerance, overnight handling, overlaps, year boundaries, breaks).
+
+```bash
+# All plugin test suites
+composer tests-plugins
+
+# Only this plugin
+composer tests-plugins -- --plugin WorkingTimeSpanBundle
+```
+
+Requires Kimai with `LOAD_PLUGINS_IN_TEST` support (branch `feature/plugin-test-support` on https://github.com/ralf1070/kimai).
+
 ## Requirements
 
 - Kimai 2.32.0 or higher

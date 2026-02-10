@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.5/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="Tests/bootstrap.php"
+         cacheDirectory="../../kimai2/var/cache/phpunit_plugin/"
+         displayDetailsOnTestsThatTriggerDeprecations="true"
+         displayDetailsOnTestsThatTriggerErrors="true"
+         displayDetailsOnTestsThatTriggerNotices="true"
+         displayDetailsOnTestsThatTriggerWarnings="true"
+         displayDetailsOnPhpunitDeprecations="true">
+  <php>
+    <ini name="error_reporting" value="-1"/>
+    <ini name="max_execution_time" value="-1"/>
+    <ini name="date.timezone" value="Europe/Vienna"/>
+    <ini name="intl.default_locale" value="en"/>
+    <env name="KERNEL_CLASS" value="App\Kernel" force="true"/>
+    <env name="LOAD_PLUGINS_IN_TEST" value="WorkingTimeSpanBundle" force="true"/>
+    <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak"/>
+    <env name="APP_ENV" value="test" force="true"/>
+    <env name="APP_DEBUG" value="0" force="true"/>
+    <env name="APP_SECRET" value="5a79a1c866efef9ca1800f971d689f3e" force="true"/>
+    <!--
+        DATABASE_URL: Default for CI/local standalone setup.
+        Without force="true", an existing DATABASE_URL environment variable
+        (e.g. from Docker container) takes precedence.
+    -->
+    <env name="DATABASE_URL" value="mysql://kimai2_test:kimai2_test@127.0.0.1:3306/kimai2_test?charset=utf8mb4&amp;serverVersion=10.5.8-MariaDB"/>
+    <env name="CORS_ALLOW_ORIGIN" value="^https?://localhost(:[0-9]+)?$"/>
+    <env name="MAILER_URL" value="null://null"/>
+    <env name="MAILER_FROM" value="kimai@example.com"/>
+    <env name="BOOTSTRAP_RESET_DATABASE" value="false"/>
+  </php>
+  <testsuites>
+    <testsuite name="WorkingTimeSpanBundle">
+      <directory>Tests/</directory>
+    </testsuite>
+  </testsuites>
+</phpunit>

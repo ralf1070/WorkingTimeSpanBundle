@@ -103,6 +103,20 @@ Drei Einträge am selben Tag:
 
 Eintrag B wird dem 13.01. zugeordnet, weil er mit dem Nachteintrag überlappt. Der 14.01. zeigt 0 Stunden.
 
+## Tests
+
+Das Plugin enthält Unit-Tests für den TimeSpanCalculator, die alle Berechnungsszenarien abdecken (Lückentoleranz, Nachtarbeit, Überlappungen, Jahresgrenzen, Pausen).
+
+```bash
+# Alle Plugin-Test-Suites
+composer tests-plugins
+
+# Nur dieses Plugin
+composer tests-plugins -- --plugin WorkingTimeSpanBundle
+```
+
+Erfordert Kimai mit `LOAD_PLUGINS_IN_TEST`-Unterstützung (Branch `feature/plugin-test-support` auf https://github.com/ralf1070/kimai).
+
 ## Voraussetzungen
 
 - Kimai 2.32.0 oder höher

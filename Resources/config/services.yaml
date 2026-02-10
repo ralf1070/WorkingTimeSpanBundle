@@ -8,3 +8,4 @@ services:
         resource: '../../*'
         exclude:
             - '../../Resources/'
+            - '../../Tests/'
